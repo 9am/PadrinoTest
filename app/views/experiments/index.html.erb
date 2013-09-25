@@ -1,0 +1,30 @@
+<h1>Listing Experiments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Cover url</th>
+      <th>Background url</th>
+      <th>Swf url</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exps.each do |exp| %>
+      <tr>
+        <td><%= exp.title %></td>
+        <td><%= exp.content %></td>
+        <td><%= exp.cover_url %></td>
+        <td><%= exp.background_url %></td>
+        <td><%= exp.swf_url %></td>
+        <td><%= link_to 'Show', experiment_path(exp) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
