@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :experiments, only: [:index, :show]
   
   root 'static_pages#home'
